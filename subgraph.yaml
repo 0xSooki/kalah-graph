@@ -1,0 +1,36 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Kalaha
+    network: sepolia
+    source:
+      address: "0x98954ff59b91da3F183e9BA0111A25Be7778B7C0"
+      abi: Kalaha
+      startBlock: 4038579
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Join
+        - Move
+        - NewGame
+        - Start
+        - Win
+      abis:
+        - name: Kalaha
+          file: ./abis/Kalaha.json
+      eventHandlers:
+        - event: Join(uint256,address)
+          handler: handleJoin
+        - event: NewGame(uint256,address)
+          handler: handleNewGame
+        # - event: Move(uint256,uint8)
+        #   handler: handleMove
+        # - event: Start(uint256,address)
+        #   handler: handleStart
+        # - event: Win(uint256,address,address)
+        #   handler: handleWin
+      file: ./src/kalaha.ts

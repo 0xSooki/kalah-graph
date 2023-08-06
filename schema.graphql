@@ -1,0 +1,9 @@
+type Game @entity {
+  id: ID!
+  gameID: BigInt!
+  player1: String!
+  player2: String!
+  nonce: Int!
+  winner: String!
+  board: [Int!]!
+}
