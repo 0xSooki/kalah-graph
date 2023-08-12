@@ -3,6 +3,9 @@
     "Kalaha": {
       "address": "0x98954ff59b91da3F183e9BA0111A25Be7778B7C0",
       "startBlock": 4038579
+    },
+    "Contract": {
+      "address": "0x8B529d7aA35E2C62eD6C508Deb98292827cf87B2"
     }
   }
 }

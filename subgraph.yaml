@@ -27,10 +27,30 @@ dataSources:
           handler: handleJoin
         - event: NewGame(uint256,address)
           handler: handleNewGame
-        # - event: Move(uint256,uint8)
-        #   handler: handleMove
-        # - event: Start(uint256,address)
-        #   handler: handleStart
-        # - event: Win(uint256,address,address)
-        #   handler: handleWin
       file: ./src/kalaha.ts
+  - kind: ethereum
+    name: Contract
+    network: sepolia
+    source:
+      address: "0x8B529d7aA35E2C62eD6C508Deb98292827cf87B2"
+      abi: Contract
+      startBlock: 4076297
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ContractJoin
+        - ContractMove
+        - ContractNewGame
+        - ContractStart
+        - ContractWin
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: Join(uint256,address)
+          handler: handleJoin
+        - event: NewGame(uint256,address)
+          handler: handleNewGame
+      file: ./src/contract.ts
